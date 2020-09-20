@@ -1,0 +1,26 @@
+{
+  "name": "blocksolid",
+  "version": "1.0.0",
+  "description": "Blockchain with Solidity",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mblogger/blocksolid.git"
+  },
+  "keywords": [
+    "blockchain",
+    "solidity"
+  ],
+  "author": "MS <mblogger>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/mblogger/blocksolid/issues"
+  },
+  "homepage": "https://github.com/mblogger/blocksolid#readme",
+  "dependencies": {
+    "web3": "^1.3.0"
+  }
+}
