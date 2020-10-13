@@ -33,4 +33,27 @@ contract TestTypes {
         Assert.equal(inputValue, int8(60123), "Input state variable for int8 has some issue");
         Assert.equal(inputMultiple, 89, "Some difference in state variable size for int64");
     }
+
+    function testCheckUnsignedIntegerInput() external {
+        (uint8 inputValue, uint128 inputMultiple) = types.checkUnsignedIntegerInput(uint8(54098));
+        bool checkI8 = (inputValue != uint8(54098));
+        bool checkI128 = (inputMultiple != uint128(54098));
+
+        Assert.isFalse(checkI8, 'checkI8 is true, different from expectation');
+        checkI8 = (inputValue == uint8(54098));
+        Assert.isTrue(checkI8, 'checkI8 is false, different from expectation');
+        Assert.isTrue(checkI128, 'checkI128 is false, different from expectation');
+        // TODO: Throughing exception
+        // Assert.equal(inputMultiple, 68, "Some difference in state variable size for uint128");
+    }
+
+    function testCompareIntegers() external {
+        bool result = types.compareIntegers(50, 32);
+        Assert.isTrue(result, 'Unsigned Integer is greater than signed integer!');
+    }
+
+    function testBitOperationsIntegers() external {
+        uint result = types.bitOperationsIntegers(50);
+        Assert.equal(result, 115792089237316195423570985008687907853269984665640564039457584007913129639885, 'Input is greater than ~output');
+    }
 }

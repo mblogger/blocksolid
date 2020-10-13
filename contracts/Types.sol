@@ -18,4 +18,25 @@ contract Types {
         int64 inputMultiple = int64(input * input);
         return (input, inputMultiple);
     }
+
+    // Check for unsigned Integer
+    function checkUnsignedIntegerInput(uint8 input) external pure returns (uint8, uint128) {
+        uint128 inputMultiple = uint128(input * input);
+        return (input, inputMultiple);
+    }
+
+    // Operations on Integers
+    // Comparision
+    function compareIntegers(uint8 uInput, uint8 input) external pure returns (bool) {
+        if (uInput > input) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // Bit operations
+    function bitOperationsIntegers(uint input) external pure returns (uint) {
+        return ~input;
+    }
 }
