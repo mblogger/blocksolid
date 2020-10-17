@@ -56,4 +56,22 @@ contract TestTypes {
         uint result = types.bitOperationsIntegers(50);
         Assert.equal(result, 115792089237316195423570985008687907853269984665640564039457584007913129639885, 'Input is greater than ~output');
     }
+
+    // TODO
+    // function testIntegerOperations() external {
+    //     uint result = types.integerOperations(123, 1331, 'add');
+    //     assert(result == 1454);
+    // }
+
+    function testMatchNonPayableAddress() external {
+        address payable one = address(0x123);
+        address two = address(one);
+        bool result = types.matchNonPayableAddress(one, two);
+        Assert.isTrue(result, 'Both the address are not same!');
+
+        one = address(0x124);
+        two = address(0x126);
+        result = types.matchNonPayableAddress(one, two);
+        Assert.isFalse(result, 'Both the address are not same - as expected!');
+    }
 }

@@ -39,4 +39,28 @@ contract Types {
     function bitOperationsIntegers(uint input) external pure returns (uint) {
         return ~input;
     }
+
+    // Addition, subtraction and multiplication - TODO
+    // function integerOperations(uint one, uint two, string calldata operation) external returns (uint) {
+    //     if ("add".equals(operation)) {
+    //         return one + two;
+    //     } else if ("subtract".equals(operation)) {
+    //         one - two;
+    //     } else if ("multiply".equals(operation)) {
+    //         return one * two;
+    //     } else if ("division".equals(operation)) {
+    //         return one/two; 
+    //     } else if ("modulo".equals(operation)) {
+    //         return one % two;
+    //     } else if ("exponent".equals(operation)) {
+    //         return one**two;
+    //     }
+    // }
+
+    // Address
+    function matchNonPayableAddress(address nonPayAdd1, address nonPayAdd2) external pure returns(bool) {
+        return (nonPayAdd1 == nonPayAdd2);
+    }
+
+
 }
